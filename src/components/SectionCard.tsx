@@ -13,14 +13,14 @@ export const SectionCard = ({ title, selectedDate, children, className = "" }: S
 
   return (
     <Card className={`
-      bg-dashboard-glass backdrop-blur-xl border-dashboard-border/20 p-6 rounded-3xl 
-      transition-all duration-300 hover:bg-dashboard-card-hover/50 hover:shadow-2xl
-      relative overflow-hidden group h-full shadow-glass border
+          bg-dashboard-glass/60 backdrop-blur-xl border-dashboard-border/10 p-6 rounded-3xl 
+          transition-all duration-300 hover:bg-dashboard-card-hover/30 hover:shadow-2xl
+          relative overflow-hidden group h-full shadow-glass border
       ${className}
     `}>
       {/* Glassmorphism background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/1 opacity-50" />
-      <div className="absolute inset-0 bg-dashboard-card/30 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/3 to-white/1 opacity-30" />
+      <div className="absolute inset-0 bg-dashboard-card/10 backdrop-blur-sm" />
       
       <div className="relative z-10 h-full flex flex-col">
         {/* Header with title and date */}

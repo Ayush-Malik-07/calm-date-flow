@@ -38,15 +38,15 @@ export const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-dashboard-bg via-dashboard-bg to-dashboard-sidebar p-6">
-      <div className="flex gap-6 h-full">
+    <div className="min-h-screen bg-gradient-to-br from-dashboard-bg via-dashboard-bg to-dashboard-sidebar p-12">
+      <div className="flex gap-8 h-full max-h-[calc(100vh-6rem)]">
         {/* Sidebar */}
         <DashboardSidebar />
 
         {/* Main Content - Floating Container */}
         <div className="flex-1 flex flex-col">
           {/* Floating Dashboard Container */}
-          <div className="bg-dashboard-glass backdrop-blur-2xl border border-dashboard-border/20 rounded-3xl shadow-glass overflow-hidden h-full">
+          <div className="bg-dashboard-glass/50 backdrop-blur-2xl border border-dashboard-border/10 rounded-3xl shadow-glass overflow-hidden h-full">
             {/* Header */}
             <DashboardHeader selectedDate={selectedDate} onDateChange={setSelectedDate} />
 
@@ -68,6 +68,7 @@ export const Dashboard = () => {
                   title="Staff"
                   value={statsData.staff}
                   selectedDate={selectedDate}
+                  showDate={false}
                 />
                 {/* Add/Plus Card */}
                 <AddCard

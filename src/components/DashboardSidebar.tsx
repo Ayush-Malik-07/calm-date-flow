@@ -33,10 +33,10 @@ export const DashboardSidebar = () => {
               variant="ghost"
               size="icon"
               className={`
-                w-12 h-12 rounded-xl transition-all duration-300 relative overflow-hidden
+                w-12 h-12 rounded-2xl transition-all duration-300 relative overflow-hidden backdrop-blur-sm
                 ${isActive 
-                  ? 'bg-dashboard-accent text-white shadow-lg scale-105' 
-                  : 'text-dashboard-text-muted hover:text-dashboard-text hover:bg-dashboard-sidebar-hover'
+                  ? 'bg-dashboard-accent/80 text-white shadow-lg scale-105 border border-dashboard-accent/50' 
+                  : 'text-dashboard-text-muted hover:text-dashboard-text hover:bg-dashboard-card-hover/30 border border-dashboard-border/10 bg-dashboard-glass/30'
                 }
                 group-hover:scale-110 group-hover:shadow-lg
               `}
@@ -51,7 +51,7 @@ export const DashboardSidebar = () => {
             <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none animate-glow" />
           </div>
         </TooltipTrigger>
-        <TooltipContent side="right" sideOffset={15} className="bg-dashboard-card border-dashboard-border text-dashboard-text">
+        <TooltipContent side="right" sideOffset={15} className="bg-dashboard-glass/80 backdrop-blur-xl border-dashboard-border/20 text-dashboard-text shadow-glass">
           <p className="font-medium">{label}</p>
         </TooltipContent>
       </Tooltip>
@@ -59,11 +59,11 @@ export const DashboardSidebar = () => {
   );
 
   return (
-    <div className="w-20 bg-dashboard-sidebar border-r border-dashboard-border flex flex-col items-center py-6 space-y-6">
+    <div className="w-20 bg-dashboard-glass/60 backdrop-blur-2xl border border-dashboard-border/10 rounded-3xl shadow-glass flex flex-col items-center py-8 space-y-6">
       {/* Company Logo */}
-      <div className="flex flex-col items-center space-y-2 mb-8">
-        <div className="w-12 h-12 bg-gradient-to-br from-dashboard-accent to-dashboard-accent-hover rounded-2xl flex items-center justify-center shadow-lg">
-          <Building2 className="h-7 w-7 text-white" />
+      <div className="flex flex-col items-center space-y-2 mb-6">
+        <div className="w-14 h-14 bg-gradient-to-br from-dashboard-accent to-dashboard-accent-hover rounded-2xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300">
+          <Building2 className="h-8 w-8 text-white" />
         </div>
       </div>
 

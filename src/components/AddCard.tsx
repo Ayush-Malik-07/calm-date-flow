@@ -20,7 +20,7 @@ export const AddCard = ({ selectedDate, className = "", onNewAppointment, onCanc
       {showOptions && (
         <div className="absolute -top-32 left-0 right-0 z-20 space-y-2 animate-fade-in">
           <Card 
-            className="bg-dashboard-glass backdrop-blur-xl border-dashboard-border/20 p-4 rounded-2xl cursor-pointer hover:bg-dashboard-card-hover/50 transition-all duration-300 shadow-glass"
+            className="bg-dashboard-glass/80 backdrop-blur-xl border-dashboard-border/10 p-4 rounded-2xl cursor-pointer hover:bg-dashboard-card-hover/30 transition-all duration-300 shadow-glass"
             onClick={() => {
               onNewAppointment?.();
               setShowOptions(false);
@@ -29,7 +29,7 @@ export const AddCard = ({ selectedDate, className = "", onNewAppointment, onCanc
             <div className="text-dashboard-text font-medium text-center">New Appointment</div>
           </Card>
           <Card 
-            className="bg-dashboard-glass backdrop-blur-xl border-dashboard-border/20 p-4 rounded-2xl cursor-pointer hover:bg-dashboard-card-hover/50 transition-all duration-300 shadow-glass"
+            className="bg-dashboard-glass/80 backdrop-blur-xl border-dashboard-border/10 p-4 rounded-2xl cursor-pointer hover:bg-dashboard-card-hover/30 transition-all duration-300 shadow-glass"
             onClick={() => {
               onCancelAppointment?.();
               setShowOptions(false);
@@ -43,8 +43,8 @@ export const AddCard = ({ selectedDate, className = "", onNewAppointment, onCanc
       {/* Main plus card */}
       <Card 
         className={`
-          bg-dashboard-glass backdrop-blur-xl border-dashboard-border/20 p-6 rounded-3xl 
-          transition-all duration-300 hover:bg-dashboard-card-hover/50 hover:shadow-2xl 
+          bg-dashboard-glass/60 backdrop-blur-xl border-dashboard-border/10 p-6 rounded-3xl 
+          transition-all duration-300 hover:bg-dashboard-card-hover/30 hover:shadow-2xl 
           hover:scale-[1.02] cursor-pointer relative overflow-hidden group h-48
           shadow-glass border
           ${className}
@@ -52,8 +52,8 @@ export const AddCard = ({ selectedDate, className = "", onNewAppointment, onCanc
         onClick={() => setShowOptions(!showOptions)}
       >
         {/* Glassmorphism background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/1 opacity-50" />
-        <div className="absolute inset-0 bg-dashboard-card/30 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-gradient-to-br from-white/3 to-white/1 opacity-30" />
+        <div className="absolute inset-0 bg-dashboard-card/10 backdrop-blur-sm" />
         
         <div className="relative z-10 h-full flex flex-col">
           {/* Header with date */}
