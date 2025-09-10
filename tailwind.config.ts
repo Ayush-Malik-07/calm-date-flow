@@ -119,6 +119,9 @@ export default {
         "slide-up": "slide-up 0.4s ease-out",
         "glow": "glow 2s ease-in-out infinite",
       },
+      boxShadow: {
+        'glass': 'var(--shadow-glass)',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

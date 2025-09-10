@@ -13,31 +13,37 @@ export const StatsCard = ({ title, value, selectedDate, className = "" }: StatsC
 
   return (
     <Card className={`
-      bg-dashboard-card border-dashboard-border p-6 rounded-2xl transition-all duration-300 
-      hover:bg-dashboard-card-hover hover:shadow-lg hover:scale-105 cursor-pointer
-      relative overflow-hidden group
+      bg-dashboard-glass backdrop-blur-xl border-dashboard-border/20 p-6 rounded-3xl 
+      transition-all duration-300 hover:bg-dashboard-card-hover/50 hover:shadow-2xl 
+      hover:scale-[1.02] cursor-pointer relative overflow-hidden group h-48
+      shadow-glass border
       ${className}
     `}>
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-dashboard-card to-dashboard-card-hover opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      {/* Glassmorphism background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/1 opacity-50" />
+      <div className="absolute inset-0 bg-dashboard-card/30 backdrop-blur-sm" />
       
-      <div className="relative z-10">
+      <div className="relative z-10 h-full flex flex-col">
         {/* Header with title and date */}
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="text-dashboard-text-muted font-medium text-sm">{title}</h3>
-          <span className="text-xs text-dashboard-text-muted bg-dashboard-bg px-2 py-1 rounded-md">
+        <div className="flex items-start justify-between mb-4">
+          <h3 className="text-dashboard-text-muted font-medium text-sm uppercase tracking-wider">
+            {title}
+          </h3>
+          <span className="text-xs text-dashboard-text-muted bg-dashboard-bg/50 backdrop-blur-sm px-2 py-1 rounded-lg border border-dashboard-border/30">
             {formattedDate}
           </span>
         </div>
 
-        {/* Main value */}
-        <div className="text-4xl font-bold text-dashboard-text mb-2">
-          {value}
+        {/* Main value positioned at bottom left */}
+        <div className="mt-auto">
+          <div className="text-5xl font-bold text-dashboard-text">
+            {value}
+          </div>
         </div>
       </div>
 
       {/* Subtle glow effect on hover */}
-      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 bg-gradient-to-r from-dashboard-accent to-dashboard-accent-hover" />
+      <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-r from-dashboard-accent to-dashboard-accent-hover" />
     </Card>
   );
 };
